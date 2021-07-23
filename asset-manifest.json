@@ -1,0 +1,17 @@
+{
+  "files": {
+    "main.css": "/black-friday/static/css/main.c451b083.chunk.css",
+    "main.js": "/black-friday/static/js/main.866d8d8e.chunk.js",
+    "runtime-main.js": "/black-friday/static/js/runtime-main.746759db.js",
+    "static/js/2.d57e898f.chunk.js": "/black-friday/static/js/2.d57e898f.chunk.js",
+    "static/js/3.3a28a8ea.chunk.js": "/black-friday/static/js/3.3a28a8ea.chunk.js",
+    "index.html": "/black-friday/index.html",
+    "static/js/2.d57e898f.chunk.js.LICENSE.txt": "/black-friday/static/js/2.d57e898f.chunk.js.LICENSE.txt"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.746759db.js",
+    "static/js/2.d57e898f.chunk.js",
+    "static/css/main.c451b083.chunk.css",
+    "static/js/main.866d8d8e.chunk.js"
+  ]
+}
