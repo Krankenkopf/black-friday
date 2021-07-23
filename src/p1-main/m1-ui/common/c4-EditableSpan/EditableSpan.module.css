@@ -1,0 +1,16 @@
+.span {
+    min-width: 169px;
+    line-height: 36px;
+    text-align: center;
+    vertical-align: middle;
+    padding: 0 10px 0;
+    border: 2px solid #000;
+    border-radius: 2em;
+    background: #fff;
+    resize: none;
+    outline: none;
+}
+
+.span:hover {
+    border-color: #00bafa;
+}
