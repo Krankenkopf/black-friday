@@ -1,10 +1,9 @@
 
-type TInitialState = typeof initialState
-type TActions = any
+type TProfileState = typeof initialState
+export type TProfileActions = any
 
 let initialState = {}
 
-const profileReducer = (state = initialState, action: TActions): TInitialState => {
+export const profileReducer = (state = initialState, action: TProfileActions): TProfileState => {
    return state
 }
-export default profileReducer

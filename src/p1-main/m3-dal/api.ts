@@ -1,18 +1,8 @@
-import axios from 'axios';
+import axios from "axios";
 
-export const instance = axios.create(
-    {
-        baseURL: 'https://',
-        withCredentials: true,
-        headers: {
-            'API-KEY': ''
-        }
 
-    }
-)
-
-export enum ResultCodes {
-    SUCCESS = 0,
-    ERROR = 1
-}
+export const instance = axios.create({
+    baseURL: "https://neko-back.herokuapp.com/2.0/",
+    withCredentials: true
+})
 

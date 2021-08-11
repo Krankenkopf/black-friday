@@ -1,21 +1,19 @@
-import css from './Header.module.css';
-import logo from './../assets/png/oregallyLogoSmall.png'
-import {NavLink} from "react-router-dom";
 import React from "react";
+import S from "./Header.module.css";
+import {Link} from "./link/Link";
+import decksIcon from "../../../p4-assets/decks.svg";
+import profileIcon from "../../../p4-assets/profileIcon.svg";
 
-
-const Header = () => {
+export const Header = () => {
     return (
-        <header className={css.header}>
-                <NavLink to="/main">Main</NavLink>
-                <NavLink to="/profile">Profile</NavLink>
-                <NavLink to="/login">Login</NavLink>
-                <NavLink to="/signup">Sign up</NavLink>
-                <NavLink to="/password_recovery">Password recovery</NavLink>
-                <NavLink to="/enter_new_password">New password</NavLink>
-                <NavLink to="/test">Test</NavLink>
-        </header>
+        <div className={S.header_container}>
+            <div className={S.nav_container}>
+                <h2>It-incubator</h2>
+                <nav>
+                    <Link path={"/packs"} icon={decksIcon} title={"Packs List"}/>
+                    <Link path={"/profile"} icon={profileIcon} title={"Profile"}/>
+                </nav>
+            </div>
+        </div>
     )
 }
-
-export default Header;

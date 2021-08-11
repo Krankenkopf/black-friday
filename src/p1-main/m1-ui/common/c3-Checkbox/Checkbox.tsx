@@ -4,12 +4,12 @@ import classes from './Checkbox.module.css'
 // тип пропсов обычного инпута
 type DefaultInputPropsType = DetailedHTMLProps<InputHTMLAttributes<HTMLInputElement>, HTMLInputElement>
 
-type SuperCheckboxPropsType = DefaultInputPropsType & {
+type ExtraCheckboxPropsType = DefaultInputPropsType & {
     onChangeChecked?: (checked: boolean) => void
     spanClassName?: string
 }
 
-const Checkbox: React.FC<SuperCheckboxPropsType> = (
+export const Checkbox: React.FC<ExtraCheckboxPropsType> = (
     {
         type,
         onChange, onChangeChecked,
@@ -52,5 +52,3 @@ const Checkbox: React.FC<SuperCheckboxPropsType> = (
         </label>
     )
 }
-
-export default Checkbox

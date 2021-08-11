@@ -1,29 +1,26 @@
 import React from "react";
 import {Redirect, Route, Switch} from "react-router-dom";
-import Login from "../views/login/Login";
-import MainPage from "../views/main/MainPage";
-import Profile from "../views/profile/Profile";
-import {SignUp} from "../views/signup/Signup";
-import PassRecovery from "../views/passRecovery/PassRecovery";
-import {NewPass} from "../views/passRecovery/NewPass";
-import {Error404} from "../views/notFound/Error404";
+import {Login} from "../views/auth/login/Login";
 import Test from "../views/test/Test";
+import {Error404} from "../views/notFound/Error404";
+import {Main} from "../views/main/Main";
+import {NewPassContainer} from "../views/auth/newPass/NewPassContainer";
+import {PassRecoveryContainer} from "../views/auth/passRecovery/RecoveryContainer";
+import {Signup} from "../views/auth/signup/Signup";
 
 
 export const Routes = () => {
     return (
         <div>
             <Switch>
-                <Route exact path={"/"} render={() => <Redirect to={"/main"}/>}/>
-                <Route path={"/main"} render={() => <MainPage/>}/>
-                <Route path={"/profile"} render={() => <Profile/>}/>
                 <Route path={"/login"} render={() => <Login/>}/>
-                <Route path={"/signup"} render={() => <SignUp/>}/>
-                <Route path={"/password_recovery"} render={() => <PassRecovery/>}/>
-                <Route path={"/enter_new_password"} render={() => <NewPass/>}/>
-                <Route path={"/not_found"} render={() => <Error404/>}/>
-                <Route path={"/test"} render={() => <Test/>}/>
-                <Redirect from={"*"} to={"/not_found"}/>
+                <Route path={"/signup"} render={() => <Signup/>}/>
+                <Route path={"/recovery"} render={() => <PassRecoveryContainer />}/>
+                <Route path={"/new-password"} render={() => <NewPassContainer/>}/>
+                <Route path={"/sand-box"} render={() => <Test/>}/>
+                <Route path={"/404"} render={() => <Error404/>}/>
+                <Route path={"/"} render={() => <Main />}/>
+                <Redirect from={"*"} to={"/404"}/>
             </Switch>
         </div>
     )

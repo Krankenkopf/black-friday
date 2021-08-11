@@ -1,22 +1,19 @@
 import React, {FC} from 'react';
 import Input from "../../common/c1-Input/Input";
-import AltInput from "../../common/c1-Input/AltInput";
 import Button from "../../common/c2-Button/Button";
-import AltButton from "../../common/c2-Button/AltButton";
-import Checkbox from "../../common/c3-Checkbox/Checkbox";
-import AltCheckbox from "../../common/c3-Checkbox/AltCheckbox";
+import {Checkbox} from "../../common/c3-Checkbox/Checkbox";
 import EditableSpan from "../../common/c4-EditableSpan/EditableSpan";
+import {InputAlt} from "../../common/c1-Input/InputAlt";
+import {ButtonAlt} from "../../common/c2-Button/ButtonAlt";
 
-type TTestProps = {
 
-};
-const Test: FC<TTestProps> = ({}) => {
+const Test = () => {
     return (
         <div style={{display: 'flex', flexDirection: 'column', width: '200px'}}>
             <Input />
-            <AltInput />
+            <InputAlt />
             <Button> Tap </Button>
-            <AltButton> Tap-Tap </AltButton>
+            <ButtonAlt> Tap-Tap </ButtonAlt>
             <Checkbox />
             <EditableSpan />
         </div>
