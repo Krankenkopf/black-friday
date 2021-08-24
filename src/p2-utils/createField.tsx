@@ -1,6 +1,6 @@
 import React, {ChangeEvent} from "react";
-import {ElementColorVariants} from "../p1-main/m1-ui/common/c2-Button/ButtonAlt";
-import {InputAlt} from "../p1-main/m1-ui/common/c1-Input/InputAlt";
+import {ElementColorVariants} from "../p1-main/m1-ui/u0-common/c2-Button/ButtonAlt";
+import {InputAlt} from "../p1-main/m1-ui/u0-common/c1-Input/InputAlt";
 
 
 export const createField = (name: string, value: string, error?: string | null,

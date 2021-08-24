@@ -1,5 +1,5 @@
 import axios from "axios";
-import {TSignupFormData} from "../m1-ui/views/auth/signup/Signup";
+import {TSignupFormData} from "../m1-ui/u3-views/auth/signup/Signup";
 
 const instanse = axios.create({
     baseURL: "https://neko-back.herokuapp.com/2.0/",

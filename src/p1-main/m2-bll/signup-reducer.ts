@@ -1,6 +1,6 @@
 import {AppThunk} from "./store";
 import {setAppStatus} from "./app-reducer";
-import {TSignupFormData} from "../m1-ui/views/auth/signup/Signup";
+import {TSignupFormData} from "../m1-ui/u3-views/auth/signup/Signup";
 import {signupAPI} from "../m3-dal/signup-api";
 import {handleServerNetworkError} from "../../p2-utils/errorHandler";
 

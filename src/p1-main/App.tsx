@@ -1,13 +1,13 @@
 import React, {useEffect} from 'react';
-import './App.css';
 import {HashRouter} from "react-router-dom";
 import {useDispatch, useSelector} from "react-redux";
 import CircularProgress from "@material-ui/core/CircularProgress";
-import { Routes } from './m1-ui/routes/Routes';
+import { Routes } from './m1-ui/u5-routes/Routes';
 import {TStore} from "./m2-bll/store";
 import {TRequestStatus} from "./m2-bll/app-reducer";
 import {me} from "./m2-bll/auth-reducer";
-import {ErrorSnackbar} from "./m1-ui/common/c9-Snackbar/ErrorSnackbar";
+import {ErrorSnackbar} from "./m1-ui/u0-common/c9-Snackbar/ErrorSnackbar";
+import "../p3-styles/style.scss"
 
 export const App = () => {
     const status = useSelector<TStore, TRequestStatus>(state => state.app.status)
@@ -25,7 +25,7 @@ export const App = () => {
         </div>
     }
     return (
-        <div className="App">
+        <div className="wrapper">
             {status === "failed" && <ErrorSnackbar/>}
             <HashRouter>
                 <Routes />
