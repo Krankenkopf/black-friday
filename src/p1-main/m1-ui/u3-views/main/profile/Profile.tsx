@@ -18,8 +18,8 @@ export const Profile = () => {
                 <div className="profile__card paperCard2">
                     <div className="profile__avatar">
                         <img src={userData.avatar || avadefault} alt='avatar'/>
-                        <div title={`You have ${1} card`} className="profile__score">
-                            <span>1</span>
+                        <div title={`You have ${userData.publicCardPacksCount} card(s)`} className="profile__score">
+                            <span>{userData.publicCardPacksCount}</span>
                             <img src={star} alt='score'/>
                         </div>
                     </div>

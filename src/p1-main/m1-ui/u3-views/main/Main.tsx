@@ -5,6 +5,7 @@ import {Profile} from "./profile/Profile";
 import {useSelector} from "react-redux";
 import {TStore} from "../../../m2-bll/store";
 import {TUserData} from "../../../m3-dal/auth-api";
+import {PacksContainer} from "./packs/PacksContainer";
 
 
 export const Main = () => {
@@ -20,6 +21,7 @@ export const Main = () => {
                     <Switch>
                         <Route path={"/profile"} render={() => <Profile />}/>
                         <Route exact path={"/"} render={() => <Redirect to={"/profile"}/>}/>
+                        <Route path={"/packs"} render={() => <PacksContainer />}/>
                         <Redirect from={"*"} to={"/404"}/>
                     </Switch>
                 </div>

@@ -18,13 +18,10 @@ export const Header = () => {
                 <nav className="header__nav">
                     <div className="headerElement paperCard1">
                         <NavLink to={"/packs"} className="header__text">
-                            <div>
-                                <h3>To K.westchnz!</h3>
-                            </div>
+                            <h3>To K.westchnz!</h3>
                         </NavLink>
                     </div>
                 </nav>
-
                 <div>
                     <Button onClick={logoutHandler} backgroundImage>Logout</Button>
                 </div>

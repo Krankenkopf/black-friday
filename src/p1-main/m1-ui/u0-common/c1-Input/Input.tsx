@@ -1,5 +1,5 @@
 import React, {ChangeEvent, DetailedHTMLProps, InputHTMLAttributes, KeyboardEvent} from 'react'
-import classes from './Input.module.css'
+import css from './Input.module.css'
 
 
 type DefaultInputPropsType = DetailedHTMLProps<InputHTMLAttributes<HTMLInputElement>, HTMLInputElement>
@@ -37,8 +37,8 @@ const Input: React.FC<SuperInputTextPropsType/* & SuperLabelPropsType*/> = (
         onEnter && e.key === 'Enter' && onEnter()
     }
 
-    const finalSpanClassName = `${classes.error} ${spanClassName ? spanClassName : ''}`
-    const finalInputClassName = `${classes.input} ${error ? classes.errorInput : ''}` // needed to be fixed with (?:)
+    const finalSpanClassName = `${css.error} ${spanClassName ? spanClassName : ''}`
+    const finalInputClassName = `${css.input} ${error ? css.errorInput : ''}` // needed to be fixed with (?:)
 
     return (
         <div>

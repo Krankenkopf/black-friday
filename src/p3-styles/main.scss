@@ -1,14 +1,15 @@
 .main {
-	min-height: 100vh;
-	padding-top: 70px;
+	height: 100vh;
+	padding-top: 85px;
 	//main__container
 	&__container {
 		margin: 0 auto;
+		height: 100%;
 	}
 }
 
 .profile {
-	padding-top: 15px;
+	//padding-top: 15px;
 	//profile__container
 	&__container {
 		display: flex;
@@ -42,6 +43,64 @@
 		span {
 			font-weight: bold;
 			font-size: 20px;
+			position: absolute;
+			top: 50%;
+			left: 50%;
+			transform: translate(-50%, -20%);
+		}
+	}
+}
+
+.packs {
+	height: inherit;
+	display: flex;
+	flex-direction: column;
+	background-image: url("../../src/p4-assets/bgpaper2.jpg");
+	background-repeat: repeat;
+	background-size: 1000px;
+	border-radius: 10px;
+	//packs__container
+	&__container {
+		height: inherit;
+		display: flex;
+		//padding: 33px 24px;
+		padding: 15px 12px;
+	}
+	//packs__sidebar
+	&__sidebar {
+		height: inherit;
+		display: flex;
+		flex-direction: column;
+		padding: 18px 12px;
+		mask-image: linear-gradient(to bottom, rgba(0, 0, 0, 1.0) 97%, transparent);
+		background-image: url("../../src/p4-assets/bgburlapnarrow.png"), linear-gradient(rgba(200,200,0,.1), rgba(255,255,0,.1));
+		background-repeat: repeat;
+		background-size: 216px;
+	}
+	//packs__avatar
+	&__avatar {
+		position: relative;
+		display: flex;
+		justify-content: center;
+		&>img {
+			object-fit: cover;
+			width: 153px;
+			height: 153px;
+			border-radius: 50%;
+			padding: 10px;
+		}
+	}
+	//packs__avatar__score
+	&__avatar__score {
+		cursor: help;
+		z-index: 5;
+		position: absolute;
+		bottom: 10px;
+		right: 25px;
+		width: 40px;
+		span {
+			font-weight: bold;
+			font-size: 12px;
 			position: absolute;
 			top: 50%;
 			left: 50%;
