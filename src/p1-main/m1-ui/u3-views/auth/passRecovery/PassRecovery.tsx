@@ -54,7 +54,7 @@ export const PassRecovery: React.FC<TRecoveryPassProps> = React.memo(props => {
                             <div className="auth__button">
                                 {status === "loading"
                                     ? <CircularProgress/>
-                                    : <Button type="submit" ok>Send</Button>
+                                    : <Button type="submit" variant={'ok'}>Send</Button>
                                 }
                             </div>
                         </form>

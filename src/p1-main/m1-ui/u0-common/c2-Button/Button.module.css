@@ -55,6 +55,14 @@
     background-color: rgba(0, 255, 0, 0.3);
 }
 
+.active:hover {
+    background-color: rgba(0, 0, 255, 0.3);
+}
+
+.inactive:hover {
+    background-color: rgba(200, 200, 200, 0.3);
+}
+
 .button:disabled {
     cursor: not-allowed;
     background: gray;

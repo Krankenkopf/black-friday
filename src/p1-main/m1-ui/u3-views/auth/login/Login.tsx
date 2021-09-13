@@ -110,7 +110,7 @@ export const Login = () => {
                     <div className="auth__button">
                         {status === "loading"
                             ? <CircularProgress/>
-                            : <Button type={'submit'} ok>Login</Button>
+                            : <Button type={'submit'} variant={'ok'}>Login</Button>
                         }
                     </div>
                 </form>

@@ -128,8 +128,8 @@ export const Signup = () => {
                     {status === "loading"
                         ? <CircularProgress/>
                         : <div className="auth__signup__buttonsBlock">
-                            <NavLink to={'/login'}><Button cancel>Cancel</Button></NavLink>
-                            <div><Button type={'submit'} ok>Sign Up</Button></div>
+                            <NavLink to={'/login'}><Button variant={'cancel'}>Cancel</Button></NavLink>
+                            <div><Button type={'submit'} variant={'ok'}>Sign Up</Button></div>
                         </div>
                     }
                 </form>

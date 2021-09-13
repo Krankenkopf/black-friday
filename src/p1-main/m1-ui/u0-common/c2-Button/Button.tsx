@@ -1,34 +1,37 @@
-import React, {ButtonHTMLAttributes, DetailedHTMLProps} from 'react'
-import classes from './Button.module.css'
+import React, {ButtonHTMLAttributes, CSSProperties, DetailedHTMLProps} from 'react'
+import css from './Button.module.css'
 
 type DefaultButtonPropsType = DetailedHTMLProps<ButtonHTMLAttributes<HTMLButtonElement>, HTMLButtonElement>
 
 type ExtraButtonPropsType = DefaultButtonPropsType & {
-    cancel?: boolean
-    ok?: boolean
+    style?: CSSProperties
+    variant?: 'ok' | 'cancel' | 'active' | 'inactive' | 'disabled'
     backgroundImage?: boolean
 }
 
 const Button: React.FC<ExtraButtonPropsType> = (
     {
-        cancel, ok, backgroundImage,
+        variant, style, backgroundImage,
         ...restProps// все остальные пропсы попадут в объект restProps, там же будет children
     }
 ) => {
-    let className = classes.button
-    if (cancel) {
-        className = `${classes.cancel} ${classes.button}`
+    let className
+    switch (variant) {
+        case "active": className = `${css.active} ${css.button}`; break
+        case "inactive": className = `${css.inactive} ${css.button}`; break
+        case "ok": className = `${css.ok} ${css.button}`; break
+        case "cancel": className = `${css.cancel} ${css.button}`; break
+        case "disabled": className = `${css.disabled} ${css.button}`; break
+        default: className = css.button
     }
-    if (ok) {
-        className = `${classes.ok} ${classes.button}`
-    }
+
     if (backgroundImage) {
         className = `${"backgroundImage"} ${className}`
     }
     return (
-            <button style={{}}
+            <button style={style && style}
                 className={className}
-                {...restProps} // отдаём кнопке остальные пропсы если они есть (children там внутри)
+                {...restProps}
             />
     )
 }
