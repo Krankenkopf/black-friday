@@ -7,8 +7,8 @@ import {TStore} from "../../../../m2-bll/store";
 import {Sidebar} from "./Sidebar";
 import {Content} from "./Content";
 import {TRequestStatus} from '../../../../m2-bll/app-reducer';
-import S from "./Packs.module.css";
 import {TUserData} from "../../../../m3-dal/auth-api";
+import {Preloader} from "../../../u0-common/c11-Preloader/Preloader";
 
 type PacksPropsType = {
     appStatus: TRequestStatus
@@ -56,22 +56,9 @@ export const Packs: FC<PacksPropsType> = (props) => {
     const currentUserId = useSelector<TStore, string | undefined>(state => state.auth.userData?._id)
 
     return ( // TODO: add backgroundColor styles to embedded components while loading, exclude bgc from preloader
-        <div className={"packs"}>
+        <div className={"packs paperCard3"}>
             <div className={"packs__container"}>
-                {appStatus === "loading" && <div
-                    style={{
-                        position: 'fixed',
-                        display: "flex",
-                        zIndex: 20,
-                        alignItems: "center",
-                        justifyContent: "center",
-                        textAlign: 'center',
-                        width: '1100px',
-                        height: '100%',
-                        backgroundColor: 'rgba(200, 200, 200, 0.3)'
-                    }}>
-                    <CircularProgress/>
-                </div>}
+                {appStatus === "loading" && <Preloader />}
                 {addMode ? <div></div> : null}
                 <Sidebar appStatus={appStatus}
                          userData={userData}

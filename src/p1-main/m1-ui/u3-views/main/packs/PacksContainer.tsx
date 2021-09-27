@@ -1,4 +1,4 @@
-import React, {useEffect, useState} from 'react'
+import React, {useCallback, useEffect, useState} from 'react'
 import {Packs} from "./Packs";
 import {useDispatch, useSelector} from "react-redux";
 import {TStore} from "../../../../m2-bll/store";
@@ -66,13 +66,13 @@ export const PacksContainer = () => {
         }
         else dispatch(setNeedUpdate(true))
     }, [currentPage, showOwnMode, dispatch, filterMin, filterMax, packName, lastUpdatedFlag])
-    const handleLastUpdated = () => {
+    const handleLastUpdated = useCallback(() => {
         dispatch(toggleUpdatedFlag())
-    }
-    const setToSearch = (value: string) => {
+    }, [dispatch])
+    const setToSearch = useCallback((value: string) => {
         dispatch(setSearchValue(value))
-    }
-    const createNewCardsPack = () => {
+    }, [dispatch])
+    const createNewCardsPack = useCallback(() => {
         const data: AddCardsPackRequestType = {
             cardsPack: {
                 name: 'No Hope, No Fate',
@@ -81,8 +81,8 @@ export const PacksContainer = () => {
             }
         }
         dispatch(addCardsPack(data))
-    }
-    const handleTableAction = (id: string, action: CardPacksTableActionsType) => {
+    }, [dispatch])
+    const handleTableAction = useCallback((id: string, action: CardPacksTableActionsType) => {
         switch (action) {
             case "learn":  dispatch(setCardsPackID(id))
                 return;
@@ -92,16 +92,16 @@ export const PacksContainer = () => {
                 return;
             default: return
         }
-    }
-    const handleToggleShowOwnMode = () => {
+    }, [dispatch])
+    const handleToggleShowOwnMode = useCallback(() => {
         dispatch(toggleShowOwnMode())
-    }
-    const handleSetRangeValues = ([min, max]: Array<number>) => {
+    }, [dispatch])
+    const handleSetRangeValues = useCallback(([min, max]: Array<number>) => {
         dispatch(setRangeValues(min, max))
-    }
-    const handleSetCurrentPage = (page: number) => {
+    }, [dispatch])
+    const handleSetCurrentPage = useCallback((page: number) => {
         dispatch(setCurrentPage(page))
-    }
+    }, [dispatch])
     if (userData === null) {
         return <Redirect to='/login'/>
     }
