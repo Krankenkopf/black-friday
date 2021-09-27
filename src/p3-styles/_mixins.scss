@@ -34,13 +34,54 @@
 
 // </ANIMATION DECLARATIONS> ===========================================================================================
 // <ANIMATION KEYFRAMES> ===============================================================================================
-@mixin fadein($name, $distance) {
+@mixin fadeSideIn($name, $distance) {
 	@keyframes #{$name} {
 		0% {
+			opacity: 0;
 			transform: translateX($distance)
+		}
+		1% {
+			opacity: 1;
 		}
 		100% {
 			transform: translateX(0px)
+		}
+	}
+}
+
+@mixin fadeBottomIn($name, $distance) {
+	@keyframes #{$name} {
+		0% {
+			opacity: 0;
+			transform: translateY($distance)
+		}
+		1% {
+			opacity: 1;
+		}
+		100% {
+			transform: translateY(0px)
+		}
+	}
+}
+
+@mixin rotateSideIn($name, $angleStart, $angleEnd) {
+	@keyframes #{$name} {
+		0% {
+			transform: rotateY($angleStart);
+		}
+		100% {
+			transform: rotateY($angleEnd);
+		}
+	}
+}
+
+@mixin rotateBottomIn($name, $angleStart, $angleEnd) {
+	@keyframes #{$name} {
+		0% {
+			transform: rotateX($angleStart);
+		}
+		100% {
+			transform: rotateX($angleEnd);
 		}
 	}
 }

@@ -1,6 +1,8 @@
+@import "_mixins";
 .main {
 	height: 100vh;
 	padding-top: 85px;
+	overflow-x: hidden;
 	//main__container
 	&__container {
 		margin: 0 auto;
@@ -55,15 +57,10 @@
 	height: inherit;
 	display: flex;
 	flex-direction: column;
-	background-image: url("../../src/p4-assets/bgpaper2.jpg");
-	background-repeat: repeat;
-	background-size: 1000px;
-	border-radius: 10px;
 	//packs__container
 	&__container {
 		height: inherit;
 		display: flex;
-		//padding: 33px 24px;
 		padding: 15px 12px;
 	}
 	//packs__sidebar
@@ -76,6 +73,17 @@
 		background-image: url("../../src/p4-assets/bgburlapnarrow.png"), linear-gradient(rgba(200,200,0,.1), rgba(255,255,0,.1));
 		background-repeat: repeat;
 		background-size: 216px;
+		//packs__sidebar__block
+		&__block {
+			margin-bottom: 20px;
+			&:first-child {
+				margin-top: 5px;
+			}
+			& > div {
+				margin-bottom: 20px;
+				width: 192px;
+			}
+		}
 	}
 	//packs__avatar
 	&__avatar {
@@ -89,22 +97,190 @@
 			border-radius: 50%;
 			padding: 10px;
 		}
-	}
-	//packs__avatar__score
-	&__avatar__score {
-		cursor: help;
-		z-index: 5;
-		position: absolute;
-		bottom: 10px;
-		right: 25px;
-		width: 40px;
-		span {
-			font-weight: bold;
-			font-size: 12px;
+		//packs__avatar__score
+		&__score {
+			cursor: help;
+			z-index: 5;
 			position: absolute;
-			top: 50%;
-			left: 50%;
-			transform: translate(-50%, -20%);
+			bottom: 10px;
+			right: 25px;
+			width: 40px;
+			span {
+				font-weight: bold;
+				font-size: 12px;
+				position: absolute;
+				top: 50%;
+				left: 50%;
+				transform: translate(-50%, -20%);
+			}
+		}
+	}
+	//packs__content
+	&__content {
+		position: relative;
+		height: 100%;
+		display: flex;
+		flex-direction: column;
+		flex: 1 1 auto;
+		padding: 18px 10px 5px 36px;
+		//packs__content__block
+		&__block {
+			margin-bottom: 10px;
+			&:last-child {
+				margin-bottom: 0;
+			}
+		}
+	}
+}
+
+.cards {
+	height: inherit;
+	display: flex;
+	flex-direction: column;
+	//cards__container
+	&__container {
+		height: inherit;
+		display: flex;
+		padding: 33px 24px;
+	}
+	//cards__content
+	&__content {
+		position: relative;
+		height: 100%;
+		display: flex;
+		flex-direction: column;
+		flex: 1 1 auto;
+		/*padding: 18px 10px 5px 36px;*/
+		//cards__content__block
+		&__block {
+			margin-bottom: 10px;
+			&:first-child {
+				display: flex;
+				align-items: center;
+				span {
+					font-size: 30px;
+					margin-right: 10px;
+					a {
+						color: #202020;
+					}
+				}
+			}
+			&:last-child {
+				margin-bottom: 0;
+			}
+		}
+	}
+}
+
+.learning {
+	height: inherit;
+	display: flex;
+	justify-content: space-between;
+	padding: 36px;
+	/*overflow: hidden;*/
+	//learning__question
+	&__question {
+		position: relative;
+		height: 100%;
+		min-width: 345px;
+		perspective: 3000px;
+		@include anim_fadein(cardB, 0s);
+		//learning__question__cloth
+		&__cloth {
+			border-radius: 15px;
+			height: 100%;
+		}
+		//learning__question__hidden
+		>._1 {
+			animation: rotate1 1s ease-in-out .1s backwards;
+			left: 1px
+		}
+		>._2 {
+			animation: rotate2 1s ease-in-out .1s backwards;
+			right: 1px;
+		}
+		>._3 {
+			animation: rotate3 1s ease-in-out .1s backwards;
+		}
+		>._4 {
+			animation: rotate4 1s ease-in-out .1s backwards;
+		}
+		//learning__question__revealed
+		&__revealed {
+		}
+	}
+	//learning__answer
+	&__answer {
+		position: relative;
+		height: 100%;
+		min-width: 345px;
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		perspective: 3000px;
+		@include anim_fadein(cardA, 0s);
+		&__cloth {
+			border-radius: 15px;
+			height: 100%;
+		}
+		&__hidden {
+		}
+		&__revealed {
+		}
+	}
+	//learning__panel
+	&__panel {
+		display: flex;
+		flex-direction: column;
+		justify-content: flex-start;
+		align-items: center;
+	}
+	//learning__gradeBox
+	&__gradeBox {
+		position: relative;
+		height: 60%;
+		min-width: 250px;
+		perspective: 3000px;
+		margin-bottom: 10%;
+		&._in {
+			animation: gBoxIn 500ms ease-in-out .1s backwards;
+		}
+		&._out {
+			animation: gBoxOut 1s ease-in-out .1s backwards;
+		}
+	}
+}
+
+@include fadeSideIn(cardA, -1000px)
+@include fadeSideIn(cardB, -500px)
+@include rotateSideIn(rotate1, 183deg, 3deg)
+@include rotateSideIn(rotate2, -3deg, -183deg)
+@include rotateSideIn(rotate3, 0deg, 180deg)
+@include rotateSideIn(rotate4, -180deg, 0deg)
+@include fadeBottomIn(gBoxIn, 1000px)
+
+
+.utils {
+	&__cardEdge {
+		position: absolute;
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		height: 100%;
+		width: 100%;
+		border-radius: 15px;
+		transition: all 900ms ease-in-out;
+		background-color: #505050;
+	}
+	&__rotating {
+		position: absolute;
+		transition: all 900ms ease-in-out;
+		-webkit-backface-visibility: hidden;
+		backface-visibility: hidden;
+		//utils__rotating__card
+		&._card {
+			height: 100%;
+			min-width: 345px;
 		}
 	}
 }
