@@ -41,7 +41,7 @@ const Input: React.FC<SuperInputTextPropsType/* & SuperLabelPropsType*/> = (
     const finalInputClassName = `${css.input} ${error ? css.errorInput : ''}` // needed to be fixed with (?:)
 
     return (
-        <div>
+        <>
             <input
                 placeholder={'Enter text here'}
                 type={'text'}
@@ -52,7 +52,7 @@ const Input: React.FC<SuperInputTextPropsType/* & SuperLabelPropsType*/> = (
             />
 {/*            <label someCustomProp={`I'm not work`} alt={'!!!'} placeholder={'enter smth hier'}> </label>*/}
             {error && <div className={finalSpanClassName}>{error}</div>}
-        </div>
+        </>
     )
 }
 

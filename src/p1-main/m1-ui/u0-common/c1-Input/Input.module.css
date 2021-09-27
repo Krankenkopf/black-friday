@@ -1,8 +1,8 @@
 .input[type="text"] {
     box-sizing: border-box;
-    width: 100%;
+    min-width: 100px;
     height: 40px;
-    padding: 10px;
+    padding: 0.5em 0.8em 0.2em 1em;
     border: 2px solid #000;
     border-radius: 2em;
     background: #fff;
@@ -10,7 +10,8 @@
     outline: none;
 }
 .input[type="text"]:focus {
-    border-color: #00bafa;
+    border: 2px solid transparent;
+    box-shadow: 0 0 0 3px #000;
 }
 
 .errorInput[type="text"] {

@@ -3,7 +3,7 @@ import css from "../Table.module.css";
 import TableCell from "./TableCell";
 
 type TTableRowProps = {
-    cells: Array<string | React.ReactNode>
+    cells: Array<React.ReactNode>
     columnWeights: Array<string>
     cellMinHeight?: string
 };
