@@ -65,7 +65,7 @@ export const Cards = () => {
             card: {
                 cardsPack_id: cardsPack_id,
                 question: 'Did I ever tell you the definition of insanity?',
-                answer: 'Insanity is doing exact same fucking thing over and over again expecting shit to change',
+                answer: 'Insanity is doing exact same thing over and over again expecting shit to change',
                 type: "card"
             }
         }
@@ -86,7 +86,7 @@ export const Cards = () => {
         'Answer',
         <span onClick={handleLastUpdated}>Last Updated {lastUpdatedFlag === "0grade" ? '▲' : '▼'}</span>,
         'Grade']
-    console.log(cards)
+
     const cellData: Array<[string, ...Array<React.ReactNode>]> = useMemo(() => cards.length > 0
         ? cards.map((c: CardType) => [
             c._id,
