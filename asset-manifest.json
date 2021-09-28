@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/black-friday/static/css/main.db895342.chunk.css",
-    "main.js": "/black-friday/static/js/main.7065cd9c.chunk.js",
+    "main.js": "/black-friday/static/js/main.35f08b02.chunk.js",
     "runtime-main.js": "/black-friday/static/js/runtime-main.ee1d1bde.js",
     "static/js/2.de95376f.chunk.js": "/black-friday/static/js/2.de95376f.chunk.js",
     "static/js/3.6bfba63c.chunk.js": "/black-friday/static/js/3.6bfba63c.chunk.js",
@@ -22,6 +22,6 @@
     "static/js/runtime-main.ee1d1bde.js",
     "static/js/2.de95376f.chunk.js",
     "static/css/main.db895342.chunk.css",
-    "static/js/main.7065cd9c.chunk.js"
+    "static/js/main.35f08b02.chunk.js"
   ]
 }
