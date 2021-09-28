@@ -43,6 +43,7 @@ export const cardsReducer = (state: CardsStateType = initialState, action: Cards
         case "CARDS/SET-CURRENT-PAGE":
         case "CARDS/SET-SEARCH-VALUE":
         case "CARDS/SET-CARDSPACK-ID":
+        case "CARDS/SET-PAGINATION-OFFSET":
             return {...state, ...action.payload}
         case "CARDS/TOGGLE-UPDATED-FLAG":
             return {
@@ -63,6 +64,8 @@ export const setCurrentPage = (page: number) =>
     ({type: cardsActionVariables.SET_CURRENT_PAGE, payload: {page: page}}) as const
 export const setSearchValue = (value: string) =>
     ({type: cardsActionVariables.SET_SEARCH_VALUE, payload: {cardQuestion: value}}) as const
+export const setPaginationOffset = (value: number) =>
+    ({type: cardsActionVariables.SET_PAGINATION_OFFSET, payload: {pageCount: value}}) as const
 
 
 
@@ -144,6 +147,7 @@ type SetCardsDataType = ReturnType<typeof setCardsData>
 type ToggleUpdatedFlagType = ReturnType<typeof toggleUpdatedFlag>
 type SetCurrentPageType = ReturnType<typeof setCurrentPage>
 type SetSearchValueType = ReturnType<typeof setSearchValue>
+type SetPaginationOffsetType = ReturnType<typeof setPaginationOffset>
 export type CardsStateType = typeof initialState
 export type CardsActionsType =
     SetCardsPackIDType
@@ -151,6 +155,7 @@ export type CardsActionsType =
     | ToggleUpdatedFlagType
     | SetCurrentPageType
     | SetSearchValueType
+    | SetPaginationOffsetType
 
 const cardsActionVariables = {
     SET_CARDSPACK_ID: "CARDS/SET-CARDSPACK-ID",

@@ -24,8 +24,8 @@ export const Main = () => {
                         <Route path={"/profile"} render={() => <Profile />}/>
                         <Route exact path={"/"} render={() => <Redirect to={"/profile"}/>}/>
                         <Route path={"/packs"} render={() => <PacksContainer />}/>
-                        <Route path={"/cards"} render={() => <Cards />}/>
-                        <Route path={"/learning"} render={() => <Learning />}/>
+                        <Route path={"/cards/:packID"} render={() => <Cards />}/>
+                        <Route path={"/learning/:packID"} render={() => <Learning />}/>
                         <Redirect from={"*"} to={"/404"}/>
                     </Switch>
                 </div>
