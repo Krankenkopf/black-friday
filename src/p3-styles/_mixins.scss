@@ -27,10 +27,11 @@
 
 // <ANIMATIONS> ========================================================================================================
 // <ANIMATION DECLARATIONS> ============================================================================================
-@mixin anim_fadein($name, $delay) {
+@mixin anim_fade($name, $delay) {
 	animation: #{$name} 1 1s cubic-bezier(.37, .05, .41, 1) $delay;
 	animation-fill-mode: backwards;
 }
+
 
 // </ANIMATION DECLARATIONS> ===========================================================================================
 // <ANIMATION KEYFRAMES> ===============================================================================================
@@ -49,6 +50,21 @@
 	}
 }
 
+@mixin fadeSideOut($name, $distance) {
+	@keyframes #{$name} {
+		0% {
+			transform: translateX(0px)
+		}
+		99% {
+			opacity: 1;
+		}
+		100% {
+			opacity: 0;
+			transform: translateX($distance)
+		}
+	}
+}
+
 @mixin fadeBottomIn($name, $distance) {
 	@keyframes #{$name} {
 		0% {
@@ -60,6 +76,22 @@
 		}
 		100% {
 			transform: translateY(0px)
+		}
+	}
+}
+
+@mixin fadeBottomOut($name, $distance) {
+	@keyframes #{$name} {
+		0% {
+			opacity: 1;
+			transform: translateY(0px)
+		}
+		99% {
+			opacity: 1;
+		}
+		100% {
+			opacity: 0;
+			transform: translateY($distance)
 		}
 	}
 }

@@ -74,6 +74,12 @@ h4 {
 	background-size: 600px;
 }
 
+.cardContainer {
+	padding: 20px;
+	display: flex;
+	flex-direction: column;
+}
+
 .shadowed {
 	box-shadow: 0 0 10px 3px $secondary;
 }

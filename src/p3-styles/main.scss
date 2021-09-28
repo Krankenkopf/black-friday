@@ -184,7 +184,12 @@
 		height: 100%;
 		min-width: 345px;
 		perspective: 3000px;
-		@include anim_fadein(cardB, 0s);
+		&.in {
+			@include anim_fade(cardBIn, 0s);
+		}
+		&.out {
+			@include anim_fade(cardBOut, 0s);
+		}
 		//learning__question__cloth
 		&__cloth {
 			border-radius: 15px;
@@ -218,7 +223,12 @@
 		flex-direction: column;
 		align-items: center;
 		perspective: 3000px;
-		@include anim_fadein(cardA, 0s);
+		&.in {
+			@include anim_fade(cardAIn, 0s);
+		}
+		&.out {
+			@include anim_fade(cardAOut, 0s);
+		}
 		&__cloth {
 			border-radius: 15px;
 			height: 100%;
@@ -234,11 +244,18 @@
 		flex-direction: column;
 		justify-content: flex-start;
 		align-items: center;
+		&__extra {
+			height: 80%;
+			display: flex;
+			flex-direction: column;
+			justify-content: flex-start;
+			align-items: center;
+		}
 	}
 	//learning__gradeBox
 	&__gradeBox {
 		position: relative;
-		height: 60%;
+		height: 80%;
 		min-width: 250px;
 		perspective: 3000px;
 		margin-bottom: 10%;
@@ -246,18 +263,34 @@
 			animation: gBoxIn 500ms ease-in-out .1s backwards;
 		}
 		&._out {
-			animation: gBoxOut 1s ease-in-out .1s backwards;
+			animation: gBoxOut 1000ms ease-in-out .1s backwards;
+		}
+		//learning__gradeBox__container
+		&__container {
+			height: 100%;
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+			justify-content: space-between;
+			padding: 20px;
+			div {
+				height: 40px;
+			}
 		}
 	}
 }
 
-@include fadeSideIn(cardA, -1000px)
-@include fadeSideIn(cardB, -500px)
+@include fadeSideIn(cardAIn, -1000px)
+@include fadeSideIn(cardBIn, -500px)
+@include fadeSideOut(cardAOut, 1000px)
+@include fadeSideOut(cardBOut, 1500px)
+
 @include rotateSideIn(rotate1, 183deg, 3deg)
 @include rotateSideIn(rotate2, -3deg, -183deg)
 @include rotateSideIn(rotate3, 0deg, 180deg)
 @include rotateSideIn(rotate4, -180deg, 0deg)
-@include fadeBottomIn(gBoxIn, 1000px)
+@include fadeBottomIn(gBoxIn, -1000px)
+@include fadeBottomOut(gBoxOut, -1000px)
 
 
 .utils {
