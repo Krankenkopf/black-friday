@@ -18,7 +18,7 @@ import {TUserData} from "../../../../m3-dal/auth-api";
 import {Redirect} from "react-router-dom";
 
 
-export type CardPacksTableActionsType = 'delete' | 'edit' | 'learn'
+export type CardPacksTableActionsType = 'delete' | 'edit' | 'reveal' | 'learn'
 export const PacksContainer = () => {
     const dispatch = useDispatch()
     const appStatus = useSelector<TStore, TRequestStatus>(state => state.app.status)
@@ -84,7 +84,9 @@ export const PacksContainer = () => {
     }, [dispatch])
     const handleTableAction = useCallback((id: string, action: CardPacksTableActionsType) => {
         switch (action) {
-            case "learn":  dispatch(setCardsPackID(id))
+            case "learn":
+            case "reveal":
+                dispatch(setCardsPackID(id))
                 return;
             case "delete": dispatch(deleteCardsPack({id: id}))
                 return;

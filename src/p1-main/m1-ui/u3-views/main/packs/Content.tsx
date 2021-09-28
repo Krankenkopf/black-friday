@@ -12,6 +12,7 @@ import Input from "../../../u0-common/c1-Input/Input";
 import Button from "../../../u0-common/c2-Button/Button";
 import Table from "../../../u0-common/c7-Table/Table";
 import {Paginator} from "../../../u0-common/c8-Paginator/Paginator";
+import Visibility from '@material-ui/icons/Visibility';
 
 type ContentPropsType = {
     rawData: Array<CardPackType>
@@ -53,14 +54,21 @@ export const Content: FC<ContentPropsType> = (props) => {
             currentUserId === el.user_id
                 ? <IconButton onClick={() => handleTableAction(el._id, 'edit')}><Edit/></IconButton>
                 : null,
-            <NavLink to={'/learning/' + el._id}>
-                <IconButton onClick={() => handleTableAction(el._id, 'learn')}><ArrowForward/></IconButton>
-            </NavLink>
+            el.cardsCount !== 0
+                ? <NavLink to={'/cards/' + el._id}>
+                    <IconButton onClick={() => handleTableAction(el._id, 'reveal')}><Visibility /></IconButton>
+                </NavLink>
+                : null,
+            el.cardsCount !== 0
+                ? <NavLink to={'/learning/' + el._id}>
+                    <IconButton onClick={() => handleTableAction(el._id, 'learn')}><ArrowForward/></IconButton>
+                </NavLink>
+                : null
             ,])
         : [['There is nothing here yet']]
         , [currentUserId, handleTableAction, rawData])
-    const columnSchema = 'h1 h2 h3 h4 h5 h5 h5'
-    const columnWeights = useMemo(() => ['16fr', '4fr', '8fr', '10fr', '2fr', '2fr', '2fr',], [])
+    const columnSchema = 'h1 h2 h3 h4 h5 h5 h5 h5'
+    const columnWeights = useMemo(() => ['16fr', '4fr', '8fr', '10fr', '2fr', '2fr', '2fr', '2fr',], [])
     return (
         <div className={"packs__content"}>
             <div className={"packs__content__block"}>
